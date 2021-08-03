@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Login/Registration Form Transition</title>
+  <link rel="stylesheet" type="text/css" th:href="@{css/login/css/swiper.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{css/login/css/animate.min.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{css/login/css/index.css}">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'><link rel="stylesheet" th:href="@{css/login/css/style.css}">
+
+<!--  必须-->
+  <link rel="stylesheet" type="text/css" th:href="@{css/index/css/normalize.css}" />
+  <link rel="stylesheet" type="text/css" th:href="@{css/index/css/flickity.css}" />
+  <link rel="stylesheet" type="text/css" th:href="@{css/index/css/main.css}" />
+  <script th:src="@{js/index/js/modernizr.custom.js}"></script>
+  <!--	这里必须引入header 就因为一个main-->
+  <link rel="stylesheet" th:href="@{css/header/css/reset.css}"> <!-- CSS reset -->
+  <link rel="stylesheet" th:href="@{css/header/css/style.css}"> <!-- Resource style -->
+  <script th:src="@{js/header/js/modernizr.js}"></script> <
+
+  <style>
+
+.m1{
+  position: relative;
+  min-height: 110vh;
+  height: 100%;
+  width: 110%;
+  overflow: hidden;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background:url("../../../img/login/img/3.jpg")  no-repeat center center;   /*加载背景图*/   /* 背景图不平铺 */
+  background-size:cover;  /* 让背景图基于容器大小伸缩 */
+  background-attachment:fixed;        /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+  background-color:#CCCCCC;
+
+ }
+
+
+label{
+  margin: 25px auto 0
+}
+
+  </style>
+  
+</head>
+
+<div th:insert="~{common/header.html::header1}"></div>
+<div th:insert="~{common/header.html::header2}"></div>
+<div th:insert="~{common/header.html::header3}"></div>
+<body >
+<main class="cd-main-content m1 "  >
+  <div id="main"  class="cont  " style="opacity:0.8"  >
+    <div class="form sign-in">
+      <h2>Welcome back</h2>
+      <label style=" margin: 25px auto 0">
+        <span>Email</span>
+        <input type="email" />
+      </label>
+      <label >
+        <span>Password</span>
+        <input type="password" />
+      </label>
+      <p class="forgot-pass">Forgot password?</p>
+      <button type="button" class="submit" style=" margin: 25px auto 0">Sign In</button>
+      <button type="button" class="fb-btn" style=" margin: 25px auto 0">Connect with <span>facebook</span></button>
+    </div>
+    <div class="sub-cont">
+      <div class="img">
+        <div class="img__text m--up">
+          <h2>New here?</h2>
+          <p>Sign up and discover great amount of new opportunities!</p>
+        </div>
+        <div class="img__text m--in">
+          <h2>One of us?</h2>
+          <p>If you already has an account, just sign in. We've missed you!</p>
+        </div>
+        <div class="img__btn">
+          <span class="m--up">Sign Up</span>
+          <span class="m--in">Sign In</span>
+        </div>
+      </div>
+      <div class="form sign-up">
+        <h2>Time to feel like home,</h2>
+        <label>
+          <span>Name</span>
+          <input type="text" />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" />
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" />
+        </label>
+        <label>
+          <span>Confirm Your Password</span>
+          <input type="password" />
+        </label>
+        <button type="button" class="submit" style=" margin: 25px auto 0">Sign Up</button>
+        <button type="button" class="fb-btn" style=" margin: 25px auto 0">Join with <span>facebook</span></button>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+
+<a href="https://dribbble.com/shots/3306190-Login-Registration-form" target="_blank" class="icon-link">
+  <img src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Dribbble-icon.png">
+</a>
+<a href="https://twitter.com/NikolayTalanov" target="_blank" class="icon-link icon-link--twitter">
+  <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png">
+</a>
+<!-- partial -->
+  <script  th:src="@{js/login/js/script.js}"></script>
+
+</body>
+<script th:src="@{js/login/js/jquery-3.6.0.min.js}"></script>
+<script type="text/javascript">
+ $(".cont").css({  
+        position: "absolute",  
+        left: ($(window).width() - $(".cont").outerWidth())/2,  
+        top: ($(window).height() - $(".cont").outerHeight())/2  
+    }); 
+
+
+
+window.onresize = function(){
+    
+  $(".cont").css({  
+        position: "absolute",  
+        left: ($(window).width() - $(".cont").outerWidth())/2,  
+        top: ($(window).height() - $(".cont").outerHeight())/2  
+    }); 
+}
+
+  </script>
+
+<script th:src="@{js/header/js/jquery-2.1.0.min.js}"></script>
+<script th:src="@{js/header/js/jquery.mobile.custom.min.js}"></script>
+<script th:src="@{js/header/js/main.js}"></script>
+</html>
